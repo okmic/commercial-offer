@@ -97,7 +97,7 @@ const services = [
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-primary-400 font-semibold tracking-wider section-subtitle uppercase">Услуги</span>
             <h2 className="section-heading text-white mt-3 mb-4 section-title mobile-text-center">
-             Что я могу предложить
+              Как я могу помочь вашему бизнесу 
             </h2>
             <p className="text-gray-400 card-text mx-auto mobile-text-center">
               Комплексные IT-решения для вашего бизнеса с фокусом на результат
