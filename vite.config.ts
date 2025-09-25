@@ -3,8 +3,12 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/cp/',
+  base: '/commercial-offer/',
   build: {
-    outDir: 'build'
+    outDir: 'build',
+    emptyOutDir: true
+  },
+  server: {
+    port: 3000
   }
 })
