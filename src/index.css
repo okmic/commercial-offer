@@ -1,0 +1,221 @@
+/* src/index.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset and base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+html {
+  background: #0f172a; /* dark-900 */
+}
+
+body {
+  background: #0f172a; /* dark-900 */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Container consistency */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+.hero-heading {
+  font-size: clamp(1.6rem, 5vw, 3.0rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-subheading {
+  font-size: clamp(0.95rem, 3vw, 1.25rem);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.section-heading {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.section-subtitle {
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.card-heading {
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.card-text {
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.feature-text {
+  font-size: clamp(0.9rem, 3vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.list-text {
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  line-height: 1.4;
+}
+
+.button-text {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  font-weight: 600;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0369a1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+  border-radius: 2px;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, 
+    rgba(15, 23, 42, 0.95) 0%, 
+    rgba(30, 41, 59, 0.9) 100%);
+}
+
+
+/* Mobile-first spacing */
+.mobile-section-padding {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+.mobile-inner-padding {
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .mobile-inner-padding {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-inner-padding {
+    padding: 0 2rem;
+  }
+}
+
+/* Touch-friendly buttons */
+.touch-button {
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.touch-button:active {
+  transform: scale(0.98);
+}
+
+/* Ensure full width sections */
+.full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* Improved mobile layout */
+@media (max-width: 768px) {
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-tight {
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .gradient-text {
+    background: #0ea5e9;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-hover {
+    transition: none;
+  }
+  
+  .card-hover:hover {
+    transform: none;
+  }
+}
